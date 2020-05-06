@@ -22,6 +22,8 @@ public class Roulette {
     /**
      * @param args the command line arguments
      */
+    
+     private static String output ;
     public static void main(String[] args) 
             
     {
@@ -54,7 +56,7 @@ public class Roulette {
         while(response.equalsIgnoreCase("Start"))
         {
             int number = r.nextInt(37);
-             String output = "";
+             output = "";
             
             System.out.println("Place your bets");
             Timer timer = new Timer();
@@ -92,14 +94,41 @@ public class Roulette {
                     {
                         result = "LOSE";
                     }
-                }
+                }else if( betNumber.equalsIgnoreCase("EVEN"))
+                {
+                    if(number % 2 == 0)
+                    {
+                         result = "WIN";
+                        winnings = betVal *2;
+                    }else
+                    {
+                        result = "LOSE";
+                    }
                     
+                }else if(betNumber.equalsIgnoreCase("ODD"))
+                {
+                     if(number % 2 != 0)
+                    {
+                         result = "WIN";
+                        winnings = betVal *2;
+                    }else
+                    {
+                        result = "LOSE";
+                    }
+                }
+                   
+                
+                output+=  "" + names.get(p) + "\t" + betNumber + "\t" + winnings + "\n";   
                     
                 };
             };
             timer.schedule(tt,1000,30000);
             
             
+            System.out.println("Number: " + number);
+            System.out.println("Player \t Bet \t Outcome \t Winnings");
+            System.out.println("---");
+            System.out.println(output);
             
             
             
