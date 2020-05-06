@@ -8,7 +8,10 @@ package game;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  *
@@ -25,7 +28,9 @@ public class Roulette {
         //Read names from file
         File namesFile = new File("Names.txt");
         ArrayList<String> names = new ArrayList<>();
-        
+        Scanner in = new Scanner(System.in);
+         String response = "";
+         Random r = new Random();
         try
         {
         Scanner reader = new Scanner(namesFile);
@@ -43,10 +48,43 @@ public class Roulette {
         }
         
         
+        //Get bets 
+        System.out.println("Type Start to begin the game, anything other key to end the game");
+        response = in.nextLine();
+        while(response.equalsIgnoreCase("Start"))
+        {
+            int number = r.nextInt(37);
+            
+            
+            System.out.println("Place your bets");
+            Timer timer = new Timer();
+            TimerTask tt = new TimerTask() {
+                @Override
+                public void run() 
+                {
+                    String bet = in.nextLine();
+                    
+                    
+                    
+                };
+            };
+            timer.schedule(tt,1000,30000);
+            
+            
+            
+            
+            
+            
+                System.out.println("Type Start to begin the game, anything other key to end the game");
+        response = in.nextLine();
+        }
         
         
         
         
     }
+    
+    
+ 
     
 }
