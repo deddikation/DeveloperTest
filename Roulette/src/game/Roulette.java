@@ -80,10 +80,18 @@ public class Roulette {
                 String  betNumber = rem.substring(0, rem.indexOf(" "));
                 
                 Double betVal = Double.parseDouble(rem.replace(betNumber,""));
-                
-                if(betNumber.)
+                String result = "";
+                Double winnings = 0.0;
+                if(isNumeric(betNumber))
                 {
-                    
+                    if(Double.parseDouble(betNumber) == number)
+                    {
+                        result = "WIN";
+                        winnings = betVal *2;
+                    }else
+                    {
+                        result = "LOSE";
+                    }
                 }
                     
                     
@@ -104,6 +112,18 @@ public class Roulette {
         
         
     }
+    
+    public static boolean isNumeric(String strNum) {
+    if (strNum == null) {
+        return false;
+    }
+    try {
+        double d = Double.parseDouble(strNum);
+    } catch (NumberFormatException nfe) {
+        return false;
+    }
+    return true;
+}
     
     
  
