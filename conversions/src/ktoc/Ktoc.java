@@ -24,12 +24,12 @@ public class Ktoc {
         in  = new Scanner(System.in);
         
         
-        System.out.println("Enter celsius value");
+        System.out.println("Enter kelvin value");
         
-        float c = in.nextFloat();
+        float f = in.nextFloat();
         
-       float k = c +273.15F;
-        System.out.println("Kelvin : " + k);
+       float c = f -273.15F;
+        System.out.println("Celsius : " + c);
         
         
         
