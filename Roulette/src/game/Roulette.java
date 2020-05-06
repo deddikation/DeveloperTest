@@ -54,7 +54,7 @@ public class Roulette {
         while(response.equalsIgnoreCase("Start"))
         {
             int number = r.nextInt(37);
-            
+             String output = "";
             
             System.out.println("Place your bets");
             Timer timer = new Timer();
@@ -64,6 +64,27 @@ public class Roulette {
                 {
                     String bet = in.nextLine();
                     
+                    String player = bet.substring(0, bet.indexOf(" "));
+                    int p =-1;
+                    
+                    
+                    switch(player)
+                    {
+                        case "Tiki_Monkey" : p = 0;
+                        break;
+                        case "Barbara" : p =1;
+                    }
+                    
+                  String rem =  bet.replaceAll(player,"");
+                    
+                String  betNumber = rem.substring(0, rem.indexOf(" "));
+                
+                Double betVal = Double.parseDouble(rem.replace(betNumber,""));
+                
+                if(betNumber.)
+                {
+                    
+                }
                     
                     
                 };
